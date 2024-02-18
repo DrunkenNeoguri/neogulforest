@@ -1,15 +1,19 @@
-"use client";
-import { useCheckIn } from "@/hooks/useCheckin";
-import { CheckInStyle } from "./page.styles";
 import { Suspense } from "react";
-import { CheckInComponent } from "./check-in-component";
+import { CheckInStyle } from "./styles/styles";
+import CheckInHelpInfo from "./components/CheckInHelpInfo";
+import CheckInSeatInfo from "./components/CheckInSeatInfo";
+import CheckInInfo from "./components/CheckInInfo";
 
 export default function CheckIn() {
   return (
-    <main>
+    <section>
       <Suspense fallback={<>Loading...</>}>
-        <CheckInComponent />
+        <CheckInInfo />
+        <div className={CheckInStyle.articleLine} />
+        <CheckInSeatInfo />
+        <div className={CheckInStyle.articleLine} />
+        <CheckInHelpInfo />
       </Suspense>
-    </main>
+    </section>
   );
 }

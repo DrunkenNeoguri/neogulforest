@@ -1,4 +1,4 @@
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export const useCheckIn = () => {
   const searchParams = useSearchParams();
@@ -8,6 +8,5 @@ export const useCheckIn = () => {
     searchParams.get("second"),
     searchParams.get("third"),
   ];
-  console.log(username, first, second, third);
   return { username, first, second, third };
 };
